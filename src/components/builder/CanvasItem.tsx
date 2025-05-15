@@ -34,6 +34,8 @@ export function CanvasItem({ element, isSelected, onClick }: CanvasItemProps) {
             height={200} // Default height, could be configurable
             className="object-contain"
             data-ai-hint="placeholder image"
+            draggable="false"
+            onDragStart={(e) => e.preventDefault()}
             onError={(e) => {
               (e.target as HTMLImageElement).src = 'https://placehold.co/300x200.png';
             }}
